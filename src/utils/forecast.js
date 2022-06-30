@@ -3,7 +3,6 @@ const geocode=require('./geocode');
 
 const forecast = (latitude, longitude, callback) => {
     const url=`http://api.weatherstack.com/current?access_key=76674d118126d91419cb1714f063111a&query=${latitude},${longitude}`;
-    console.log(url);
     request({ url, json: true }, (error, resp) => {
         if (error) {
             callback('Unable to connect to weather service!', undefined)
