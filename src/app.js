@@ -8,6 +8,9 @@ const viewsPath=path.join(__dirname,'../templates/views');
 const partialPath=path.join(__dirname,'../templates/partials');
 //Set up Static Directory
 app.use(express.static(path.join(__dirname,'../public')));
+//Setting Up Port
+
+const port=process.env.PORT||3000;
 //Set up EJS
 app.set("view engine","hbs")
 app.set('views',viewsPath);
@@ -116,7 +119,7 @@ app.get('*',(req,res)=>
         'name':'Saurabh'
     });
 })
-app.listen(3000,()=>
+app.listen(port,()=>
 {
-    console.log("Hello_Node");
+    console.log(`Server running on port ${port}`);
 })

@@ -9,7 +9,7 @@ weather_form.addEventListener('submit',(e)=>
     e.preventDefault();
     var location=search.value;
     bad.textContent=`Loading info on ${location} ...`;
-    fetch(`http://localhost:3000/weather?location=${encodeURIComponent(location)}`).then((response)=>
+    fetch(`/weather?location=${encodeURIComponent(location)}`).then((response)=>
 {
     response.json().then((data)=>
     {
